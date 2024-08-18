@@ -21,16 +21,15 @@ class Graph:
         return 'False'
 
 
-
-g = Graph()
+relationGraph = Graph()
 n = int(input())
 for _ in range(n):
     line = input()
     person, f = line.split('#')
     frinds_list = f.split('-')
     for frind in frinds_list:
-        g.addEdge(person,frind)
+        relationGraph.addEdge(person,frind)
 
 start, goal = input().split('-')
-result = g.bfs(start, goal)
+result = relationGraph.bfs(start, goal)
 print(result)
